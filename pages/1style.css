@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #4b3621;    /* Dark Coffee Brown */
+    --secondary-color: #a67b5b;  /* Light Roast */
+    --accent-color: #d2b48c;      /* Beige/Cream */
+    --bg-color: #faf9f6;         /* Off-White */
+    --text-color: #333333;
+    --white: #ffffff;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* --- Layout Helpers --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+/* --- Header & Navigation (Flexbox) --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Main Content --- */
+main {
+    min-height: 80vh;
+}
+
+/* --- Services Grid (CSS Grid) --- */
+.grid-3-cols {
+    display: grid;
+    /* Responsive Grid: fits as many columns as possible, min 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between cards */
+}
+
+/* --- Card Component --- */
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden; /* Keeps image inside rounded corners */
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lifts card up on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image fills area without distortion */
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-body p {
+    color: #666;
+    font-size: 1rem;
+}
+
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+/* --- Responsive Design (Media Query) --- */
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Adjust Grid for very small screens */
+    .grid-3-cols {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
