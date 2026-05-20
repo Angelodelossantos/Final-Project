@@ -9,7 +9,7 @@
     --transition: all 0.3s ease;
 }
 
-/* --- Global Reset --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ body {
     background-color: var(--bg-color);
 }
 
-/* --- Layout Helpers --- */
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -48,7 +48,7 @@ h3 {
     font-size: 1.8rem;
 }
 
-/* --- Header & Navigation (Flexbox) --- */
+
 header {
     background-color: var(--primary-color);
     color: var(--white);
@@ -88,12 +88,12 @@ nav {
     color: var(--accent-color);
 }
 
-/* --- Main Content --- */
+
 main {
     min-height: 80vh;
 }
 
-/* --- Table Styling --- */
+
 table {
     width: 100%;
     border-collapse: collapse; /* Removes gaps between cells */
@@ -124,7 +124,7 @@ td {
     color: var(--text-color);
 }
 
-/* Table Row Hover Effect */
+
 tbody tr {
     transition: background-color 0.2s ease;
 }
